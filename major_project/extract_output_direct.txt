@@ -1,0 +1,1373 @@
+=== demo_1.pptx ===
+   Smart Phishing URL Detection System
+VISVESVARAYA TECHNOLOGICAL UNIVERSITY, BELAGAVI
+B.L.D.E.A’s V.P.DR.P.G.HALAKATTI COLLEGE OF ENGINEERING AND TECHNOLOGY,VIJAYAPUR-586103
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING 
+Guide
+Mrs. Anupama Inamdar
+Co-ordinator
+S.R.Patil
+Dakshayani. I
+PROJECT PHASE-I 
+Overview
+Smart Phishing URL Detection System :- is a machine learning–based solution designed to identify and block malicious URLs in real-time. It analyz URL patterns, domain features, and suspicious behaviors to protect users from phishing attacks and data breaches.
+
+Applications
+Browser Security – Real-time protection while browsing 
+Email Filtering – Detects phishing links in emails 
+Banking Security – Secures financial transactions 
+E-Commerce Platforms – Prevents fraudulent activities 
+Enterprise Systems – Protects organizational networks 
+
+Key Technologies
+Machine Learning (ML) – Classifies URLs as safe or malicious 
+Artificial Intelligence (AI) – Improves detection over time 
+URL Feature Extraction – Analyzes structure & patterns 
+Cybersecurity Techniques – Ensures safe user interaction 
+Web Technologies – Enables browser & system integration
+Literature Survey (URL Phishing Detection)
+Literature Survey (URL Phishing Detection)
+Problem Statements
+Existing phishing detection systems face significant challenges that limit their effectiveness:
+
+Blacklist Dependency
+Reliance on pre-existing lists limits detection of new, unknown threats
+
+No Real-Time Detection
+Delayed response times allow malicious links to compromise systems before detection
+
+Low Accuracy
+High false positive and false negative rates reduce user trust
+
+No Adaptive Learning
+Static systems cannot learn from new phishing techniques
+
+Poor User Awareness
+Limited feedback fails to educate users about potential threats
+Objectives
+
+
+
+
+Detect phishing URLs with high accuracy
+ 
+Provide real-time analysis 
+
+Reduce false positives/negatives 
+
+Improve user awareness
+ 
+Handle new unknown threats 
+Drawbacks of Existing Research
+
+
+Limited Scope
+Most systems focus only on URL analysis without considering contextual factors
+
+
+High Computational Cost
+Resource-intensive methods slow down browsing experience
+
+
+Static Models
+Fixed algorithms cannot adapt to evolving phishing techniques
+
+
+False Positives
+Legitimate sites incorrectly flagged as malicious frustrate users
+
+
+
+Scalability Issues
+Systems struggle to handle large volumes of URLs efficiently
+Proposed Solutions
+
+Core Functional Components
+
+Intelligent Feature Extraction: Automatically analyzes URL structures, domain information, and suspicious patterns to identify red flags.
+ML-Based Classification: Uses trained algorithms to differentiate between legitimate and fraudulent websites based on extracted features.
+Real-Time Detection Engine: Provides immediate feedback to the user, blocking malicious links before they can compromise sensitive data.
+
+Key Technical Advantages
+
+High Accuracy: Engineered to reduce both false positives (legitimate sites incorrectly flagged) and false negatives (undetected threats) through intelligent analysis.
+Adaptive Security: Unlike static systems, the AI-driven model improves its detection capabilities over time as it encounters new phishing techniques.
+Scalable Architecture: Designed to handle large volumes of URLs efficiently without significant computational costs or browsing delays.
+
+Proposed Workflow
+
+Input: User enters or encounters a URL.
+Analysis: The system performs real-time feature extraction and processes it through the ML model.
+Output: Provides a security prediction and takes defensive action if a threat is detected.
+ Methodology
+
+🔹 1. Data Collection
+Collect dataset of phishing and legitimate URLs from online sources (e.g., Kaggle, PhishTank).
+
+🔹 2. Data Preprocessing
+Remove duplicates and missing values 
+Normalize URLs 
+Label data (Phishing = 1, Legitimate = 0) 
+
+🔹 3. Feature Extraction
+Extract important URL features such as:
+URL length 
+Presence of “@”, “-”, “//” 
+Domain age, IP usage 
+Number of subdomains 
+
+🔹 4. Model Training
+Train machine learning models like:
+Random Forest 
+Support Vector Machine (SVM) 
+Logistic Regression 
+
+🔹 5. Model Evaluation
+Evaluate performance using:
+Accuracy 
+Precision 
+Recall 
+F1-score 
+
+🔹 6. Prediction System
+Deploy model to classify URLs as:👉 Phishing or Legitimate in real-time
+Workflow / System Flow
+Output
+Prediction
+ML Model
+Feature Extraction
+User Input
+Conclusion
+
+
+Improved Detection
+ML-based approach identifies both known and emerging phishing threats
+
+
+Higher Accuracy
+Reduced false positives and negatives through intelligent analysis
+
+
+Enhanced Security
+Real-time protection empowers users to browse safely
+URLShield represents a significant advancement in phishing detection technology, combining machine learning with real-time analysis to provide robust protection against evolving cyber threats.
+=== demo_2.pptx ===
+   Smart Phishing URL Detection System
+VISVESVARAYA TECHNOLOGICAL UNIVERSITY, BELAGAVI
+B.L.D.E.A’s V.P.DR.P.G.HALAKATTI COLLEGE OF ENGINEERING AND TECHNOLOGY,VIJAYAPUR-586103
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING 
+Guide
+Mrs. Anupama Inamdar
+PROJECT PHASE-II 
+Co-ordinator
+S.R.Patil
+Dakshayani. I
+
+Phishing URL Detection System
+Hybrid Deep Learning & Machine Learning Approach
+A web-based application combining CNN-BiLSTM neural networks with ensemble methods for automated phishing detection
+Project Overview
+
+Objective
+Detect phishing URLs using hybrid ML/DL architecture with real-time prediction capabilities
+
+Problem
+Growing threat of phishing attacks requires automated, scalable detection systems
+
+Solution
+Web application with dual models: CNN-BiLSTM for pattern recognition and RF/DT for fast inference
+
+Stack
+Flask backend, TensorFlow/Keras, Scikit-learn, HTML/CSS/JS frontend
+
+Dataset & Preprocessing
+Data Sources
+OpenPhish feed (2500+ real phishing URLs)
+Synthetic legitimate domains (2500 URLs)
+Stratified train/validation/test split
+Cleaning Pipeline
+URL normalization and deduplication
+Format validation
+Character-level tokenization
+Feature Engineering
+Character embeddings (VOCAB_SIZE: 256)
+Statistical features (max length: 2048 chars)
+URL structure analysis
+Preprocessing
+Vectorization and scaling
+StandardScaler for DT/RF models
+
+Model Architecture
+
+
+1
+CNN-BiLSTM
+Character embedding → Conv1D (128 filters) → BiLSTM (64 units) → Dense layers
+Adam optimizer with learning rate scheduling
+Dropout (0.4) and L2 regularization (1e-4)
+Batch normalization
+
+
+2
+Random Forest & Decision Tree
+Statistical feature-based classification with hyperparameter tuning via grid search
+Fast inference for production
+Interpretable decision paths
+Ensemble benefits
+Implementation Progress
+40%
+Completed
+Feature extraction, model architecture, Flask server, UI, prediction module, training pipelines, evaluation
+60%
+In Progress
+Hyperparameter tuning, real-time API deployment, inference optimization
+Completed Components
+model/feature_extractor.py
+model/architecture.py
+app.py (Flask server)
+templates/index.html
+static/css/style.css
+static/js/app.js
+fetch_urls.py
+model/predict.py
+model/train.py
+model/train_rf.py
+model/evaluate.py
+Performance Metrics
+85%
+Accuracy
+Overall correct classifications
+88%
+Precision
+Proportion of true positives
+83%
+Recall
+Phishing URL detection rate
+85%
+F1-Score
+Harmonic mean balance
+Comparison Results
+CNN-BiLSTM: Higher accuracy, slower inference
+Random Forest: Faster predictions, interpretable
+Ensemble: Optimal balance for production
+
+Web Application Features
+Real-Time Interface
+Web-based UI for instant URL prediction with input validation and error handling
+REST API
+CORS-enabled /api/predict endpoint for integration with external systems
+Batch Prediction
+Process multiple URLs simultaneously for bulk analysis workflows
+Model Persistence
+Saved Components
+scaler_dt.json: Decision Tree preprocessor
+scaler_rf.json: Random Forest scaler
+Model weights with architecture definitions
+Training configurations for reproducibility
+Deployment Strategy
+Serialized models enable rapid deployment across environments while maintaining consistent preprocessing pipelines
+Conclusion & Future Work
+Key Achievements
+Hybrid architecture implemented with 85%+ accuracy and real-time prediction capabilities
+Next Steps
+Ensemble methods, transfer learning from larger datasets, automated retraining pipeline
+Deployment Ready
+Production-grade API with validation, error handling, and batch processing support
+
+Thank You
+Questions and Discussion Welcome
+=== Reach_paper.pdf ===
+International Journal of Data Science and Analytics (2025) 20:4449–4471
+https://doi.org/10.1007/s41060-025-00728-9
+REGULAR PAPER
+Web-based phishing URL detection model using deep learning
+optimization techniques
+Kousik Barik1·Sanjay Misra2·Raghini Mohan3
+Received: 21 June 2024 / Accepted: 24 January 2025 / Published online: 8 February 2025
+© The Author(s) 2025
+Abstract
+Phishing is a cyber-attack in which the attacker redirects Internet users to fraudulent websites. Fake websites look very similarto legitimate ones, leading users to trust them and disclose sensitive information. Despite the available methods, these attacks
+have grown exponentially, emphasizing the need for advanced techniques. This study proposes an EGSO-CNN model to
+detect web phishing by integrating features and optimizing deep learning (DL) techniques. A novel dataset has been createdto address the availability of existing updated phishing datasets. The StandardScaler and Variational Autoencoders (V AE) are
+employed for preprocessing and feature extraction. The Enhanced Grid Search Optimization (EGSO) technique optimizes
+the model’s performance. The proposed model yields an accuracy of 99.44%, a recall of 99.21%, and an f1-score of 99.32%with low false positive and error rates. The presented model can assist management by selecting effective phishing detection
+strategies to enhance customer delight.
+Keywords Phishing attacks ·Deep learning ·Optimization techniques ·User awareness
+1 Introduction
+The advancement of Internet services has signiﬁcantly trans-
+formed individuals’ daily lives. During the global pandemic,
+many traditional retail sectors shifted from in-person to
+online services. Internet service users store sensitive dataon their devices or within online systems [ 1]. These data
+often contain username, account name, password, and credit
+card details. Most Organizations digitize their day-to-dayoperations to facilitate convenient access to diverse online
+BSanjay Misra
+sanjay.misra@ife.no
+Kousik Barik
+kousikbarik@gmail.com
+Raghini Mohan
+mrm@vcet.ac.in
+1Department of Computer Science, Liverpool John MooresUniversity, Liverpool, UK
+2Department of Applied Data Science, Institute for EnergyTechnology, Halden, Norway
+3Department of Artiﬁcial Intelligence and Data Science,Velammal College of Engineering and Technology, Madurai,Indiaservices. The expansion of the Internet and associated ser-
+vices has introduced the issue of data security and theincreasing prevalence of sophisticated cyberattacks. Cyber-criminals unlawfully acquire users’ sensitive information and
+manipulate them into participating in illegal online actions
+[2].
+Phishing is a type of cyberattack that employs social
+engineering techniques to exploit users’ information by trick-
+ing them into clicking on fraudulent websites. This enablescybercriminals to intercept sensitive information and acquire
+funds without authorization [ 3]. Phishing remains a promi-
+nent and effective cyber-attack, exhibiting consistent growthover the years [ 4]. Phishing websites are often designed
+to simulate original URLs by incorporating key elements
+such as textual descriptions, logos, and company names.
+Phishing attacks have substantial economic, political, andsocial implications for individuals, organizations, and gov-
+ernments. Some of these implications include (a) ﬁnancial
+loss [ 5], (b) conﬁdential and proprietary data theft [ 6], and
+(c) facilitating other cyberattacks [ 7]. According to data pub-
+lished by APWG [ 8], the number of unique web phishing
+attacks detected in Q3,2024 was 932,923, up from 877,536in Q2,2024, as depicted in Fig. 1. These data signify an rising
+trend of phishing attacks.
+123
+4450 International Journal of Data Science and Analytics (2025) 20:4449–4471
+289,324301,507342,092
+260,000270,000280,000290,000300,000310,000320,000330,000340,000350,000360,000
+Jul-24 Aug-24 Sep-24Count
+Month
+Fig. 1 Web phishing attacks trend Q3,2024
+Figure 2illustrates the most targeted sectors affected by
+phishing attacks in Q3, 2024. The social media industry is the
+most impacted at 30.5%, followed by webmail, at 21.20%,and the ﬁnancial sector, at 13%.
+The daily generation of new phishing URLs poses sub-
+stantial challenges. Several existing studies have proposedusing machine learning (ML) techniques to identify phish-
+ing URLs [ 9]. However, these techniques are associated with
+several limitations. The one signiﬁcant challenge is the man-ual feature extraction, which is time-consuming, prone toerrors, and requires the involvement of expert profession-
+als. Phishing URL detection has recently gained popularity
+with the adoption of deep learning (Dl) based models, includ-ing Convolutional Neural Networks (CNN), Long short-term
+memory Networks (LSTM), and Recurrent Neural Networks
+(RNN) [ 10]. These techniques can identify features from
+unprocessed data, reduce the dependency on feature engi-
+neering and manual intervention, and address the limitations
+of lexical-based feature extraction. Furthermore, deep learn-ing models are scalable, capable of handling large datavolumes and can improve e classiﬁcation performance in
+complex environments [ 11]. However, publicly available
+benchmark datasets are often not updated regularly, whileattack patterns continue to evolve [ 12–14]. Blacklisting is themost popular and quick detection method, but it has limita-
+tions in identifying newly developed phishing websites [ 15].
+This study aims to address these gaps by creating a dataset
+and developing an optimized model for detecting web phish-
+ing attacks through a detailed experimental evaluation. Wepresent a model based on three experiments to enhance per-formance and reduce false positives and losses to extend the
+current studies. This study addresses the following research
+question (RQ).
+RQ1 . What are the existing studies, methods, and publicly
+available datasets for web phishing detection? What are the
+techniques to create phishing datasets?
+RQ2 . How can a deep learning classiﬁer detect phishing
+attacks?
+RQ3 . What is the signiﬁcance of optimizing the deep
+learning-based model, and how does it impact performance?
+This study explores existing datasets and methods for
+detecting web phishing attacks. It proposes a model that
+includes feature engineering and deep learning-based opti-mization to enhance performance and address the research
+questions.
+The signiﬁcant contributions of this study are as follows:
+1. To summarize existing techniques and solutions for
+phishing attacks, enabling organizations and users to
+effectively understand recent trends.
+2. To create a web phishing dataset based on samples from
+trusted sources. This process will support the researchers
+in developing phishing datasets to explore unseen fea-
+tures and extend existing studies.
+3. To propose a novel EGSO-CNN model for detecting
+phishing attacks using deep learning methods and an opti-
+mization technique to enhance performance while reduc-
+ing false positives and error rates. The study employedStandardScaler for preprocessing to remove unwanted
+Fig. 2 Most targeted sectors
+30%
+21% 13%9%8%6%5%3%3%2%
+Social Media 
+Webmail
+Financial Sector
+Others
+Retail 
+Payment 
+Telecommunica/g415on
+Logis/g415csTravel
+Cryptocurrency 
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4451
+Fig. 3 Phishing life cycle
+null values from the dataset. The features are extracted
+using Variational Autoencoders (V AE).
+4. To validate the proposed model using a different dataset
+and compare it with the existing related studies.
+The remaining paper is formulated as follows: Sect. 2
+demonstrates the study background, existing dataset, and
+phishing detection methods. Section 3depicts the proposed
+methodology. Section 4illustrates comprehensive experi-
+mentation. Section 5emphasizes the study’s contribution to
+IS knowledge, practical implications, limitations, and future
+research directions. Finally, the paper is concluded in Sect. 6.
+2 Background and related work
+This section discusses the study background, existing
+datasets, and ML and DL-based studies on web phishing
+detection.
+2.1 Background of the study
+The phishing phenomenon was initially documented in 1996
+in the hacker newsgroup [ 16]. The term "phishing" origi-
+nated from the word "ﬁshing," with the substitution of the
+letter "f" with "ph" [ 17]. A user account with compromised
+credentials is generally called phishing, and the person whosuccessfully obtains the stolen credentials is known as thephisher. A phishing website is designed to emulate a real
+website and steal users’ sensitive information to exploit it
+[18]. Attackers commonly manipulate a target webpage’s
+hostname and path components to create a phishing UR
+[19]. The term URL (Uniform Resource Locator) refers to
+a web address that identiﬁes the location of a resource. Aweb resource can encompass various formats, including web
+pages, text ﬁles, emails, images, and database access [ 20]. A
+URL consists of two primary elements: the protocol identi-ﬁer and the resource path. Figure 3shows the phishing lifecycle. First, an attacker creates a phishing website similar to a
+legitimate website. The attackers manipulate URL elements,
+such as the domain name and network resource directory,
+by introducing spelling errors or using similar alphabeticcharacters to create a clone version of a legitimate website.
+For example, the URL " https://aimazon.az-z7acyu3z0y10.
+abc/m " replicates the appearance and functionality of the
+legitimate website " https://www.amazon.com ." When users
+access fake websites, attackers capture sensitive information
+for exploitation.
+2.2 Existing dataset
+The quality of the dataset plays a crucial role in the per-
+formance of the detection model. We review the publicly
+available web phishing datasets, which are the most popu-
+lar, widely used, and comprehensive. Several web phishingdetection studies often use the PhishTank [ 21] dataset. This
+dataset encompasses approximately seven million records
+related to phishing URLs and is developed as a benchmark
+for ML and DL-based web phishing detection systems. Alexa[22] is an online platform developed by Amazon that offers a
+range of analytical tools for evaluating website performance.
+Its ranking system utilizes probability to rank millions ofbenign website URLs. The OpenPhish [ 23] dataset contains
+URLs associated with phishing activities and provides meta-
+data, including page content and IP address. The Kaggle[24] offers a web phishing detection dataset containing 87
+extracted features.
+The Mendeley [ 25] published in 2021, this dataset consists
+of authentic and phishing website samples. Each instancecontains the URL and the corresponding HTML page. The
+PhishStorm [ 26] is a publicly available phishing dataset
+consisting of a CSV ﬁle. The domain column provides aunique identiﬁer for each entry. The label column provides
+the domain entry status: 1 for legitimate and 1 for phish-
+ing. Table 1summarizes the publicly available web phishing
+datasets.
+123
+4452 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Table 1 Existing publicly available datasets
+Name/Reference/last update Phishing size Legal size Link
+PhishTank [ 21], 2017 4.8 K 1.2 K https://phishtank.org/developer_info.php
+Alexa [ 22], 2023 2.5 K 2.5 K https://www.alexa.com/
+OpenFish [ 23], 2023 6.2 K 6.2 K https://openphish.com/phishing_database.html
+Kaggle [ 24], 2021 114 K 392 K https://www.kaggle.com/datasets/
+Mendeley [ 25], 2021 50 K 30 K https://data.mendeley.com/datasets/n96ncsr5g4/1
+PhishStorm [ 26], 2014 48 K 48 K https://research.aalto.ﬁ/en/datasets/phishstorm-phishing-legitimate-url-dataset
+2.3 ML-based phishing detection
+Machine learning usage has signiﬁcantly increased in various
+domains over the last decades. Ahammad et al. [ 27] presented
+a study on web phishing detection using ﬁve ML classiﬁers.
+The study employed the Phish Tank dataset of 3000 URLs.
+The LightGBM classiﬁer achieved an accuracy of 89.5%, butthe study considered the limited features. Alani et al. [ 28]
+offered a comprehensive analysis of phishing URL detection
+employing ML techniques. In the feature selection stage, thelimited necessary features are eliminated through recursivefeature elimination. The dataset was created by collecting
+data from Phish Tank and Alexa datasets. The random forest
+classiﬁer demonstrated the highest accuracy of 97.5% but,the proposed model was evaluated in the cloud environment.
+Korkmaz et al. [ 29] presented a study on web phishing detec-
+tion ML-based techniques using eight different classiﬁers.The authors utilized different evaluation metrics, i.e., accu-
+racy, TPR, FPR, TNR, FNR, precision, f1-score, and time.
+Barraclough et al. [ 30] proposed a study on intelligent online
+cyber phishing attack detection, integrated web content, andheuristic-based approaches using different techniques. The
+authors demonstrated an accuracy of 99.33% using the PART
+classiﬁer.
+Jain et al. [ 31] presented an effective approach to detect-
+ing web phishing pages using ML classiﬁers. The author
+employed effective feature selection techniques to detectzero-day attacks and used the Alexa dataset. The proposed
+model was evaluated using ﬁve different ML classiﬁers, and
+the random forest classiﬁer achieved the highest accuracyof 93.85%. Sánchez-Paniagua et al. [ 32] proposed a model
+based on ML techniques for phishing detection and utilized
+handcrafted feature selection. Three sets are employed: legit-
+imate home, login, and phishing. The authors validated themodel using eight ML classiﬁers. The LightGBM yielded
+the highest accuracy of 94.67% using PIU-60 k datasets,
+and XGBoost accomplished an accuracy of 93.22%. Jhaet al. [ 33] proposed a study identifying and distinguish-
+ing a web phishing website. Using logistic regression, the
+authors exhibited the highest accuracy of 98% comparedto the ML classiﬁers employed. Karim et al. [ 34] studiedphishing URL detection using hybrid ML techniques. The
+study used voting techniques that combined multiple ML
+classiﬁers, and a canopy-based feature selection technique
+was utilized. The author achieved an accuracy of 98.12%,a precision of 97.31%, and an f1-score of 95.89%. Shirazi
+et al. [ 35] presented a study on phishing detection based
+on synthetic data generation using adversarial autoencoderand WGAN-based (Wasserstein Generative Adversarial Net-
+work) techniques. The authors achieved an accuracy between
+97 and 98% in detecting phishing URLs using different ML-based classiﬁers. The study considered limited features anddid not consider the data-cleaning process. Pandey et al. [ 36]
+proposed a model for web phishing detection based on the
+web page’s predominant color. The authors employed ﬁveML classiﬁers, and the random forest classiﬁer demonstrated
+the highest accuracy of 99.13%. The study considered a lim-
+ited number of features and did not consider the error rate.
+2.4 DL-based phishing detection
+Smadi et al. [ 37] presented a neural network model for
+zero-day phishing email detection. The authors employed
+reinforcement learning to enhance the performance and
+reduce the false positive rates. The proposed model demon-strated an accuracy of 98.63%. Yang et al. [ 38] proposed a
+multidimensional feature phishing detection technique based
+on quick detection using the DL technique. The charac-ter sequence characteristics from URLs are retrieved and
+employed by DL for categorization. CNN is employed to
+extract local correlation information. The author demon-strated an accuracy of 98.88% but did not focus on the errorrate and processing time. Zhu et al. [ 39] proposed a model
+for phishing detection using a neural network and decision
+tree with optimum features. The authors demonstrated anaccuracy of 97.80% and a precision of 97.76%.
+Tang et al. [ 40] presented a novel framework for web-
+based phishing detection using RNN-GRU. The author usedfour different data sets for validation and accomplished an
+accuracy of 99.18%, reducing the calculation time and false
+alarm rates. Al-Ahmadi et al. [ 41] proposed a phishing detec-
+tion model based on LSTM, CNN, and GAN. The LSTM
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4453
+generates synthetic phishing URLs, and CNN determines
+whether real or fake. The authors presented a precision of98.02% and an accuracy of 97.58% without depending on
+third-party services.
+Almousa et al. [ 42] presented a model for web phishing
+detection using a systematic approach, CNN, LSTM, anda Fully Connected Deep Neural Network (FC-DNN) with
+parameter optimization. The study employed four publicly
+available datasets to validate the model and demonstratedan accuracy of 97.37%. Hussain et al. [ 43] presented a
+model named CNN-Fusion, a practical and lightweight web
+phishing URL detection based on character-level CNN.The CNN layers are regularized using Dropout, Batch nor-
+malization, and SpatialDropout1D. Prabakaran et al. [ 44]
+presented a model integrating DL-based Variational Autoen-coders (V AE) and DNN. The features are automaticallyextracted using V AE. The authors validated the model using
+two datasets and demonstrated an accuracy of 97.45%, but the
+study exhibits a relatively high false positive rate of 2.19%.Kumar et al. [ 45] proposed a model based on the binary
+bat and neural network for identifying phishing attacks. The
+proposed model used Adam’s optimization techniques andyielded an accuracy of 94.8%. Opera et al. [ 46] presented
+a model of phishing detection using a trained DNN to ana-
+lyze embedded raw URLs and HTML contents. The authorsdemonstrated an accuracy of 98.1% with minimum false pos-itives and false negatives. Table 2summarizes the existing
+DL-based web phishing detection studies.
+One of the primary challenges identiﬁed in existing ML-
+based phishing detection studies is their reliance on manual
+feature engineering and difﬁculty handling a large dataset.
+Attackers may understand the explicit features on which themodel has been trained and bypass the security mechanism.
+The DL-based model can address the large amount of data in
+complex environments with high processing speed. However,few studies have created web phishing datasets, includingmultiple data sources, and employed processing and opti-
+mization techniques. Although prior studies have explored
+DL-based model methods to classify raw HTML strings,enhancements are required to achieve enhanced accuracy and
+reduced error rates in classiﬁcation.
+The study aims to address these gaps by creating a web
+phishing dataset based on updated samples from trusted
+sources. The study used a comprehensive pre-processing
+technique to remove unwanted null values from the dataset.Three deep learning classiﬁers, CNN, LSTM, and GRU,have been employed to build the model. The proposed
+model with optimization techniques is evaluated based on
+three experimentations and validated with a different dataset,emphasizing practical applicability.3 Research methodology
+The proposed model comprises a data module, preprocess-
+ing, feature extraction, deep learning classiﬁers, optimiza-
+tion, performance analysis and evaluation, as demonstratedin Fig. 4. The data collection module gather data from var-
+ious sources and construct a primary dataset. The dataset
+undergoes rigorous cleaning and processing followed by
+extraction of essential features. The study employed deeplearning-based classiﬁers with optimization techniques to
+build the model for performance evaluation in detecting
+phishing attacks.
+3.1 Data collection
+The signiﬁcant challenge in web phishing attack detectionis the availability of the dataset. Benchmark datasets allow
+researchers to effectively compare the performance of their
+models. However, data quality plays a critical role in deter-mining a model’s accuracy and reliability. A major issue is
+the absence of a comprehensive and up-to-date labeled train-
+ing dataset, which hampers the development of effective MLand DL-based web phishing detection systems. The contin-
+uous evolution of phishing URLs and inclusion of expired or
+outdated samples in existing datasets can negatively affecta model’s accuracy [ 47]. Biased detection can result from
+unequal distributions of phishing versus legitimate URLs.
+Since phishing techniques constantly evolving, periodically
+updated datasets are critical [ 48]. More studies are needed to
+create different web phishing datasets, enabling researchers
+to assess their models’ performance more efﬁciently. To
+address these challenges, this study aims to create the pri-mary dataset based on the samples collected from trusted
+sources, namely Kaggle [ 24], Alexa [ 22], and PhishStorm
+[26]. Figure 5presents the details of the data collection mod-
+ule.
+3.2 Data construction and description
+As summarized in Table 3, the primary dataset is created by
+collecting samples from three trusted sources: Kaggle, Alexa,
+and PhishStrom.
+The data construction process is illustrated in Fig. 6,
+outlining each stage from raw data acquisition to ﬁnal
+dataset creation. The collected data are pre-processed toensure consistency and remove invalid or incomplete entries.URLs are split into key components such as protocol,
+domain, subdomain, and path to extract lexical and statis-
+tical features. Features are categorized into three groups: URL-based, content-based, and external-based features.
+123
+4454 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Table 2 Summary of existing DL-based web phishing detection studies
+Reference Methods Datasets Approaches Strengths Limitations
+[38] A multidimensional
+feature phishingdetectionmethodology(MFPD)Phish Tank and
+dmoztools.netDynamic category
+decision algorithm,CNN, LSTMDynamic detection
+using CNN andLSTM usingcomprehensivemultidimensionalfeature detectionNot considered feature
+extraction ofwebpages and textsusing DL
+[39] Decision Tree and
+feature-based ANNData was collected
+from 10 datasetsbased on the featureArtiﬁcial Neural
+Networks (ANN)High interpretability
+and decision-makingusing feature-basedlearningOptimum feature
+selection notconsidered
+[40] Deep learning-based
+framework forphishing detectionPhishStorm,
+PhishTank,ISCX-URL2016,and KaggleRNN-GRU A novel DL approach
+that combinesRNN-GRU andevaluation withdifferent scenariosShort URLs are not
+supported
+[42] Optimization technique
+of deep learningLin Tan dataset, 2018,
+Phish Tank andAlexaLSTM, CNN Focused on
+optimizationtechniques toenhance phishingdetection capabilitiesFeature extraction is
+not considered
+[43] CNN-Fusion,
+lightweight,
+lightweight,
+character-based CNN5 publicly available
+datasetsCNN Phishing detection
+using a lightweight
+CNN model thatextractscharacter-levelfeatures effectivelyOnly considered
+character level other
+features are notconsidered
+[44] Features are extracted
+using V AE, and rawfeatures areautomaticallyextractedISCX-URL-2016
+dataset and KaggledatasetDNN (Deep Neural
+Networks)Improved model
+scalability byautomaticallyextracting featuresusing V AEFalse Positive rates are
+high
+[45] Adam optimizer
+algorithmKaggle dataset SI-BBA Improved model
+stability byﬁne-tuning usingAdam optimizationLimited dataset
+[46] Analyzing raw URLs
+and HTML contentsusing DL techniquesAlexa dataset CNN Enhanced phishing
+detection using richerdata characteristics,incorporating
+embedded raw URLs
+and HTML textsLimited features used
+and manipulation ofweb page notconsidered
+Vectorization enables the machines to comprehend textual
+elements by converting them into meaningful numerical
+representations. The Term Frequency-Inverse DocumentFrequency (TF-IDF) transforms the textual features into
+numerical vectors, capturing the relative importance of each
+term across the dataset. The feature vectors are scaled usingthe StandardScaler method to normalize values and reduce
+bias. Variational Autoencoders are employed to enhance
+feature representation further and reduce dimensionality.Subsequently, the ﬁnal primary corpus included a balanceddataset of 27,534 samples, i.e., 13,767 phishing and 13,767
+legitimate URLs, ensuring model stability. To validate theproposed model, the study employs PhishTank [ 21]a sas e c -
+ondary dataset, containing 20,004 samples: 10,002 phishing
+and 10,002 legitimate URLs. The dataset employed all theelements of an HTML record, mainly text, hyperlinks, lists,
+etc., and all the URL details to train the model. The URL
+preﬁxes, such as http:// and https://, are dropped to con-trol irregular consequences on various URL datasets. The
+description of the dataset is illustrated in Table 4.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4455
+Fig. 4 Proposed model
+Fig. 5 Data collection module
+Table 3 Description of the data
+samplesData Source Legitimate URLs Phishing URLs
+Kaggle 5715 5715
+Alexa 6425 6121
+PhishStorm 5241 5126
+Fig. 6 Data construction process
+123
+4456 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Table 4 Description of the dataset
+Name Description Sample
+Url URL https://paypal.mhm.rest/payment/
+Label 0: legitimate; 1: phishing 1
+Source Source of Data PhishStorm
+Url length Length of URL 29
+Date_creation creation date 49
+3.3 Data preprocessing and feature extraction
+The StandardScalar technique scales to unit variance and
+removes the mean, ensuring consistency and eliminating bias
+that can impair the model’s performance. It standardizes dataﬁelds by scaling their mean and standard deviation to 0 and
+1[49]. By subtracting the starting value from the converted
+value and dividing it by the standard deviation, the trans-formed value can be produced using Eq. 1.
+z/equal1x−μ
+σ(1)
+where xrepresents the feature’s original value, zrepresents
+its modiﬁed value, μrepresents the mean, and σrepre-
+sents the standard deviation. The ﬂow of the Standard Scaler
+employed in this study is presented in Fig. 7.
+Algorithm 1 represents the pseudocode code employed
+for preprocessing.
+Algorithm 1 Pseudocode of Standard Scaler
+Input: Dataset with 'n' samples and 'm' features (attributes).
+Output: Standardized dataset.
+Step 1: Compute the mean  and standard deviation  for each feature across all the samples in the dataset;
+Step 2:For each feature  (where = 1  ):
+Step 3: Calculate the mean: = ), where  is the value of feature  for sample .
+Step 4: Calculate the standard deviation: = ―2
+.
+Step 5: For each sample  (where = 1  ) and each feature :
+Step 6: Calculate the standardized value: = ― , where  is the original 
+value of feature ,  is the mean of feature ' , and  is the standard deviation of feature ' .
+Step 7: Return the standardized dataset, where each value  in the original dataset has been
+replaced by the corresponding  calculated.
+The Term Frequency-Inverse Document Frequency (TF-
+IDF) algorithm is employed for feature extraction and
+vectorization [ 50]. The number of times a word doccurs
+in a document tdivided by the total number of words in
+the document, is its term frequency (TF), as presented usingEq.2.
+TF(t,d)/equal1Count of term tin document d
+Total number of terms in document d(2)
+where t is the term, dis the document.
+The importance of a phrase in all of the corpus’s texts is
+measured by its inverse document frequency (IDF), as shown
+in Eq. 3.
+IDF(t)/equal1log/parenleftbiggN
+1+D F (t)/parenrightbigg
+(3)
+where Nis the total number of documents in the corpus, and
+DF ( t) is the document frequency of the term t.
+The TF-IDF scores are presented as a vector for each
+phrase in a document. A vector of size Vis used to rep-
+resent each document in a corpus of Ndocuments with a
+vocabulary of Vunique words. Each element in the vector
+represents the TF-IDF score for a particular vocabulary, as
+shown in Eq. 4. The TF-IDF process employed in this study
+is presented in Fig. 8.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4457
+Fig. 7 Process of the standard scaler
+Fig. 8 TF-IDF process
+/vectord/equal1[TF - IDF (t1,d),T F-I D F (t2,d),...,T F-I D F (tv,d)](4)
+Feature generation creates new features from existing ones
+that can beneﬁt the model. Feature generation can identify
+in-depth patterns in the data. For example, URL compo-
+nents can generate additional features such as URL entropy,the number of digits or special characters, and subdomain
+length. The Variational Autoencoder (V AE) enhances this
+process by encoding inputs into a probability distributionwithin the latent space. This probabilistic method permitsV AEs to sample from the latent distribution, facilitating the
+creation of diverse data instances and enhancing the model-
+ing of data variability [ 51]. It is useful for automatic feature
+generation by learning latent representations that capture the
+core structure of URLs. Unlike manual feature engineer-
+ing, V AEs generate meaningful patterns less prone to humanerror. These generated features are combined with extracted
+ones to improve the classiﬁer’s performance and reduce over-
+ﬁtting. The feature extraction technique ﬁlters out certaininbuilt URL aspects to improve the classiﬁer’s performance.Decreasing the dimensionality of the input URL may reduce
+the time overhead connected with the classiﬁer’s training.The decoder utilizes the latent variable to reassemble the
+source data after the encoder has transformed it into a latent
+variable.
+Figure 9depicts the V AE architecture and aims to reduce
+and build a network that reassembles its input data was nearly
+as possible to ˆwusing Eq. 5.
+K/parenleftbig
+w,ˆw/parenrightbig
+/equal1w−ˆw (5)
+The V AE is a randomized computational framework
+where the probability parameters r(y|w,φ)and o(w|y,φ)
+determine the encoder and decoder. Speciﬁcally, o(w|y,θ)is
+the probability of given y, and r(y|w,φ)is the approximate
+posterior, known as the adversarial encoder. After completingthe required training, the encoder can map the input informa-
+tionwto the latent space similar to the posterior distribution.
+The yis distributed according to the Gaussian theory based
+on the average ˆyand deviation σ
+2values. The value of ˆycan
+be utilized as an instance from M/parenleftbig
+μ,σ2/parenrightbig
+, and the decoder
+would be tuned to produce the outcome. The probability mar-gins for each data point are presented using Eq. 6.
+log o
+θ(w)/equal1m/summationdisplay
+j/equal11log oθ/parenleftBig
+w(j)/parenrightBig
+(6)
+where θrefers to the variable of the decoder system and
+mdenotes the quantity of data. The data point w(j)can be
+represented using Eq. 7.
+(7)log oθ/parenleftBig
+w(j)/parenrightBig
+/equal1LK/parenleftBig
+r/parenleftBig
+y|w(j),φ/parenrightBig
+,o/parenleftBig
+y|w(j),φ/parenrightBig/parenrightBig
++K/parenleftBig
+θ,φ;w(j)/parenrightBig
+where o(y|w,φ)stands for the actual posterior distribution.
+The Kullback-Lieber (KL) diverging calculates the distancebetween two distributes, as shown in Eq. 8.
+(8)K/parenleftBig
+θ,φ;w
+(j)/parenrightBig
+/equal1− LK/parenleftBig
+r/parenleftBig
+y|w(j),φ/parenrightBig
+,o(y,θ)/parenrightBig
++Fr/parenleftBig
+y|w(j),φ/parenrightBig/bracketleftBig
+log o(w(j)|y,θ/bracketrightBig
+Since KL function is non-negative can be represented
+using Eq. 9.
+(9)log oθ/parenleftBig
+w(j)/parenrightBig
+≥− LK/parenleftBig
+r/parenleftBig
+y|w(j),φ/parenrightBig
+,o(y,θ)/parenrightBig
++Fr/parenleftBig
+y|w(j),φ/parenrightBig/bracketleftBig
+log o(w(j)|y,θ/bracketrightBig
+123
+4458 International Journal of Data Science and Analytics (2025) 20:4449–4471
+The ﬁrst element on the correct side of disparities is the
+KL divergence among the subsequent and prior latent param-eter yestimates. The predicted reconstruction error may be
+considered the second term on the right side of the inequality.
+The KL difference can be estimated if the previous o(y,θ)
+is under the inﬂuence of an average distribution M/parenleftbig
+μ,σ
+2/parenrightbig
+.
+However, the expectation should be estimated using a Monte
+Carlo method for the second component. We can ﬁrst sample
+ˆyfrom an unknown distribution r/parenleftbig
+y|w(j),φ/parenrightbig
+before decod-
+ing. The sampling process derivative, which prevents the
+network from using gradient-based training, can be computed
+using Eq. 10.
+y/equal1μ+σt (10)
+Equation 11represents the objective function for V AE to
+determine y(j,i)for the jth data point using the ith sample
+T(i)from the normative average dispersion. The encoding
+process in V AE translates the supplied data into a stochastic
+probability of the latent factor, which is collected from thedispersion. Algorithm 2 presents the pseudocode employedfor feature extraction in this study.
+KVA E/equal1m/summationdisplay
+j/equal11/parenleftBigg
+1
+2I/summationdisplay
+i/equal11log o/parenleftBig
+w(j)|y(j,i),θ/parenrightBig
+−LK/parenleftBig
+r/parenleftBig
+y|w(j),φ/parenrightBig
+,M(0, 1)/parenrightBig/parenrightBigg
+(11)
+Algorithm 2 Pseudocode of the V AE algorithm
+Input: Dataset ; Parameter: and ; Mini-batch: ; Epochs: ; Rate of learning: 
+Output: Results of detection.
+Step1: Set the parameters initialized
+Step 2:for L 1 ∈  {1, 2, . . .  do 
+Step 3: for ∈  {1, 2, . . . ,  do 
+Step 4: for each ∈  do 
+Step 5: Determine each layer's input and output vectorsStep 6:       end for 
+Step 7:  end for 
+Step 8: end for 
+Step 11: Creating a matrix 
+∗
+Step 12: The first matrix of features is integrated with the newly translated feature matrix∗to acquire the matrix 
+={ }=1
+Step 13: Detecting phishing attempts with representation vectors
+Step 14: Return outcomes3.4 CNN and enhanced grid search optimization
+(EGSO)
+The Convolution Neural Network (CNN) approach reduces
+processing time by distributing the weights over a temporaldimension [ 52]. The CNNs are used to extract sequential data
+from the URL. Let ube a string of letters joined together,
+and Hcontains a group of nearby components h
+s,j/equal11,
+... Kin a concatenation to get a matrix representation u→
+H∈Qk×L. An embedding of the form hs∈QLrepresents
+each l-dimensional vector. The embedding vector from the
+manually initialized embedding matrix is used to create thethree-dimensional component representation. Concatenating
+Kcomponents together can be presented using Eq. 12.
+H
+1:K/equal1h1⊕h2⊕···⊕ hk (12)
+where ⊕presents the concatenation operator. All sequences
+are truncated to the same length Kor ﬁlled with a value of 0.
+Using a convolution operator, the CNN network convolves upthrough this instance H∈Q
+K×L. The h-length convolution
+creates a new feature by convolving a ﬁlter W∈Ql×gand a
+nonlinear activation e,a ss h o w ni nE q . 13.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4459
+Fig. 9 V AE architecture
+Fig. 10 CNN Architecture
+zj/equal1e/parenleftbig
+W⊕Hj:j+g−1+aj/parenrightbig
+(13)
+where ajis the bias.
+Each g-length segment of its inputs, separated by a preset
+stride value, is applied to the W ﬁlter as part of this convolu-tion layer’s output. After concatenating these outputs, the Z
+can be presented using Eq. 14.
+ϒ/equal1/bracketleftbig
+z
+1,z2,...,zK−g+1/bracketrightbig
+(14)The pooling step reduces the feature’s dimension, empha-
+sizes the important features, and trains the model. The CNNcan beneﬁt from the temporal connection of length h in itsinput by using a ﬁlter W to convolve each segment of length g.
+The CNN comprises many ﬁlters, each with a distinct length
+(g) and several ﬁlters in each group, as shown in Fig. 10.
+Algorithm 3 presents the pseudocode for CNN used in this
+study.
+123
+4460 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Algorithm 3 Pseudocode for CNN
+Input: URL u, embedding matrix , filter , bias a
+Output: Feature map 
+Embed URL u into matrix representation 
+= [ ]
+for  in range (1, +1 ) :
+ = Embed
+    H.append
+Concatenate all components  to form 
+ = Concatenate
+Convolve  with filter  using a sliding window approach
+= [ ]
+for  in range (1, ― +1 ) :
+        Get segment of length g from 
+= + ―1 ]
+    Apply filter  to the segment and add bias 
+= +
+Concatenate all to form the feature map 
+=
+Pooling (optional) should be applied to reduce dimensionality and retain important features.
+=
+end
+The enhanced grid search optimization (EGSO) method
+determines the fusion of these hyperparameters. Due to
+the many hyperparameters and different levels, it has a
+high computation cost. However, adding cross-validationmethods to the grid search approach can address overﬁt-
+ting issues [ 53]. Let Zbe the intended algorithm using l
+parameters to be conﬁgured; the parameter θ
+jconstitute
+the interval’s value/bracketleftbig
+wjzj/bracketrightbig
+in the search space parame-
+ter/Theta1/equal1[w1z1]× ··· × [wlzl].G:/Theta1is changed to a
+function for measuring performance that gives a score innumbers to θ. Cross-validation Hcalculates the error, and
+/Theta1contains seven factors: m
+hiddenlayer ,mneuron ,mepochs ,
+moptimization ,batch size,learning rate andλc(dropout ).
+Figure 11a depicts a grid layout with the 3 ×3 parameter set.
+The grid patterns are illustrated in Fig. 11b.
+Let/Lambda1be the search space and Lbe an implicit dimen-
+sion. A function as the conﬁguration variables’ indexed set
+L. For each variable’s collection of values, a grid search
+should ﬁnd the best value of/parenleftbig
+K1,K2,...,KL/parenrightbig
+. The study
+incorporates the CNN approach with grid search optimiza-tion. The proposed architecture consists of several layers:the input dataset, grid search CNN, max pooling layer, fully
+connected NN, convolution layer dropout, and prediction, as
+demonstrated in Fig. 12.
+Grid search has several disadvantages, i.e., the curse
+of dimensionality and high computational cost. The cross-
+validation increases the possibility of overﬁtting. The pro-posed method is efﬁcient in employing optimization tech-
+niques in complex environments. It reduces the search space
+using heuristic techniques and incorporates cross-validationto avoid overﬁtting. It further reﬁnes the search space toincrease computational efﬁciency using hyperparameter set-
+tings and early stopping to avoid excessive iterations. The
+procedure of pooling data involves determining the highestvalue on each feature map. Dropout addresses the overﬁtting
+issues. Algorithm 4 demonstrates the pseudocode employed
+in this study.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4461
+Algorithm 4 The pseudocode of EGSO-CNN
+Input : Dataset, where  is a target,  is variable, and -instruction sample with attributes; Enhanced Grid Search 
+Optimization (EGSO); Algorithm (CNN); Hyper parameter 
+Step 1: Res ←{};
+Step 2: for 
+Step 3: 
+Step 4: , )
+Step 5:     Res  ← eval (model,  , )
+Step 6:  end for 
+Step 7: ( )) 
+Step 8:  end for 
+Step 9: Output Optimized Parameters
+Fig. 11 Grid search agrid layout bgrid patterns
+Fig. 12 The architecture of the proposed model
+123
+4462 International Journal of Data Science and Analytics (2025) 20:4449–4471
+4 Result
+We performed three experiments using Python in an Ana-
+conda environment. The data was split 80% into training
+and 20% into testing. Different evaluation metrics, i.e., loss,TPR, FPR, accuracy, precision, recall, and f1-score, wereemployed to evaluate the proposed model’s performance, as
+presented in Eqs. 15to21.
+Loss/equal1L/parenleftbig
+x,ˆx/parenrightbig
+/equal1−/summationdisplay
+jxjlog/parenleftbig
+ˆxj/parenrightbig
+(15)
+TPR/equal1TP
+TP + FN(16)
+FPR/equal1FP
+FP + FN(17)
+Accuracy /equal1(True Positives + True Negatives )
+Total Number of Instances(18)
+Precision /equal1TP/(TP + FP ) (19)
+Recall /equal1TP/(TP + FN ) (20)
+F1 - score /equal12∗(Precision ∗Recall )/(Precision + Recall ).
+(21)
+4.1 Experimentation 1: evaluation of three deep
+learning methods
+In Experimentation 1, we evaluated the performance of three
+deep-learning classiﬁers: LSTM, CNN, and GRU. First,the LSTM classiﬁer was tested and yielded an accuracy of
+93.04%. Figure 13a demonstrates the accuracy of the train-
+ing and validation phase, which increases over the epochs.Figure 13b displays the training vs. validation loss, decreas-
+ing over the epochs.
+Next, the CNN classiﬁer is evaluated and demonstrated
+an accuracy of 94.47%. Figure 14a shows the accuracy of
+training vs. validation. Figure 14b illustrates the training vs.
+validation loss, which decreases over the epochs.
+Third, the GRU classiﬁer is evaluated and achieves an
+accuracy of 92.95%. Figure 15a and b demonstrates the accu-
+racy and loss in training vs. validation, respectively.
+A confusion matrix is a technique used to assess the effec-
+tiveness of model categorization. It shows true positives (TP),
+false positives (FP), true negatives (TN), and false nega-
+tives (FN) based on a comparison between predicted andactual labels. Figure 16illustrates the confusion matrix of
+the LSTM, CNN, and GRU classiﬁers.
+Figure 17illustrates the three classiﬁers’ comparative
+ROC and Precision-Recall (PR) curves. The AUC curve isportrayed in Fig. 17a, which shows that CNN performed bet-
+ter. There are small variations in classiﬁcation performancebetween the datasets. Figure 17b depicts the precision-recall
+curve and indicates that CNN performed better than others.
+Table 5demonstrates the comparative outcomes of Experi-
+ment 1 and represents that CNN performed better than others.
+4.2 Experiment 2: evaluation of the proposed model
+In experimentation 2, we evaluated the performance ofthe proposed EGSO-CNN model. The hyparameter settings
+employed to build the model are shown in Table 6.
+The proposed model enhances the performance of web
+phishing attacks by optimizing the number of layers, dropout
+rate, epochs, batch size, and learning rates. The proposed
+model performed optimally during experimentation with 100epochs, after which its performance decreased, as shown inFig. 18. The model achieved an accuracy of 99.44%, as pre-
+sented in Fig. 18a. Figure 18b demonstrates the training and
+validation loss; a training loss of 0.2 was observed in 100epochs.
+Figure 19a demonstrates the proposed model’s AUC value
+of 0.9902, which signiﬁes better performance. Figure 19b
+exhibits that the proposed model yielded a precision-recall
+curve of 0.9895, symbolizing the model’s capability to clas-
+sify positive instances precisely.
+Figure 20presents the confusion matrix of the proposed
+model.
+The comparative outcome of the proposed model and three
+selected classiﬁers are presented in Table 7. The proposed
+model outperformed the others, achieving an accuracy of
+99.44%.
+The dataset is further divided into subsets of 5000, 8000,
+and 12,000 samples to validate the proposed model’s perfor-
+mance, as shown in Fig. 21. No signiﬁcance differences were
+observed across four evaluation matrices, demonstrating theproposed model’s consistency.
+4.3 Experiment 3: validation of the proposed model
+In Experiment 3, the proposed model is further validatedusing a secondary dataset included in this study, achieving
+an accuracy of 99.40%, as shown in Fig. 22a. Figure 22b
+presents the training and validation loss, highlighting themodel’s consistent performance across both datasets. The
+corresponding confusion matrix is exhibited in Fig. 23.
+Table 8summarizes the comparative outcomes of the pro-
+posed model in both datasets, indicating consistency.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4463
+Fig. 13 LSTM performance: aaccuracy of training versus validation, bloss of training versus validation
+Fig. 14 CNN performance: aaccuracy of training versus validation, bloss of training versus validation
+4.4 Comparison with existing studies
+This section compares the proposed model with existing ML
+and DL-based web phishing detection studies. It is impor-
+tant to acknowledge that the existing studies were performedunder varying environments and parameter settings. The pro-
+posed model is compared with the existing ﬁve ML-based
+web phishing studies, i.e., RF [ 29], PART [ 30], RF [ 31], RF
+[34], and RF [ 36], using four evaluation parameters, as shown
+in Table 9.The proposed model is compared with the existing six
+DL-based web phishing detection studies: DTOF-ANN [ 39],
+RNN-GRU [ 40], LSTM-CNN [ 42], V AE-DNN [ 44], SI-BBA
+[45], and DNN [ 46], as presented in Table 10. Figure 24
+illustrates that the proposed model outperformed the others.
+123
+4464 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Fig. 15 GRU performance: aaccuracy of training versus validation, bloss of training versus validation
+Fig. 16 Confusion matrix: aLSTM, bCNN, and cGRU
+5 Discussion
+The experimental outcomes demonstrate the practical suit-
+ability the proposed model’s practical suitability for web
+phishing detection and address the research questions. The
+model’s efﬁciency and stability were evaluated using twodatasets and evaluation metrics. This study makes a sig-niﬁcant contribution to contemporary scientiﬁc research.
+Additionally, the limitations of the study and directions for
+future research are highlighted.5.1 Contribution to knowledge base
+The study emphasized the exponential growth of web phish-ing attacks over the years and outlined the phishing lifecycle
+to raise awareness among users. It highlighted existing ML
+and DL-based phishing detection methods and examinedpublicly available web phishing datasets along with theirassociated challenges. We systematically created a phishing
+attack dataset based on samples collected from three trusted
+sources. Tables 1,2,4, and Figs. 5and6address the RQ1.
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4465
+Fig. 17 Outcome analysis: aROC, bprecision-recall curve
+Table 5 The outcome of three
+DL classiﬁersParameters LSTM CNN GRU
+Accuracy 93.04 94.47 92.95
+Precision 92.90 93.79 90.68
+Recall 92.73 96.32 94.40
+F1-score 92.81 95.03 92.49
+Table 6 Hyparameter settings
+Parameter Description Value
+n_estimators Number of decision trees in the forest 200
+max_depth Maximum depth of each tree 30
+min_samples_split Minimum samples required to split a node 5
+min_samples_leaf Minimum samples at leaf node 2
+ﬁlters Number of ﬁlters in Conv1D layers 64, 128, 256
+kernel_size Size of the convolution kernel 3dropout_rate Dropout rate for regularization 0.5
+batch_size Number of samples per training batch 128
+epochs Number of training iterations 100
+learning_rate Learning rate for Adam optimizer 0.001
+In Experimentation 1, three deep learning-based tech-
+niques, i.e., LSTM, CNN, and GRU, were employed tobuild the web phishing detection model. The CNN model
+performed best, achieving an accuracy of 94.47%, outper-
+forming the other two models. The RQ2 is addressed inFigs. 13,14,15,16, and 17and Table 5. We evaluated the pro-
+posed model in Experimentation 2 by optimizing CNN and
+EGSO. The optimization parameter is presented in Table 6,
+and the proposed model achieved an accuracy of 99.44%, ass h o w ni nT a b l e 7. The proposed model is tested by varying thedataset size, as illustrated in Fig. 21, which demonstrated con-
+sistent performance. The proposed model is further validatedwith a secondary dataset in Experiment 3. It has achieved an
+accuracy of 99.40%, which conﬁrms the model’s consistency
+in detecting web phishing attacks. The model’s performancewas compared to the existing ML-based studies in Table 9
+and DL-based studies in Table 10. The RQ3 is addressed by
+conducting Experiments 2 and 3 and comparing them withthe existing studies.
+The proposed model is independent on the dataset parame-
+ters and is suitable for real-world scenarios/applications. The
+123
+4466 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Fig. 18 Outcomes: aaccuracy of training versus validation, bloss of training versus validation
+Fig. 19 Outcome of the proposed model: aAUC curve, bprecision-recall curve
+Fig. 20 Confusion matrix of the
+proposed model
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4467
+Table 7 Comparative analysis
+Parameters LSTM CNN GRU Proposed model
+Accuracy 93.04 94.47 92.95 99.44
+Precision 92.90 93.79 90.68 99.98
+Recall 92.73 96.32 94.40 99.21
+F1-score 92.81 95.03 92.49 99.32
+Fig. 21 The outcome of the
+proposed model by varying sizesof datasets
+0.950.9550.960.9650.970.9750.980.9850.990.9951
+Accuracy Precision Recall F1-scoreProposed EGSO-CNN with 
+5000 records
+Proposed EGSO-CNN with 8000 records
+Proposed EGSO-CNN with 12000 records
+Proposed EGSO-CNN with 
+Primary datasetParameters (%)
+Methods
+Fig. 22 Outcomes with secondary dataset: aaccuracy of training versus validation, bloss of training versus validation
+Table 8 Comparison of the proposed model with both the datasets
+Parameters Outcome with the primary dataset (%) Outcome with the secondary dataset (%)
+Accuracy 99.44 99.40
+Precision 99.98 99.31
+Recall 99.21 99.1
+F1-score 99.32 99.25
+123
+4468 International Journal of Data Science and Analytics (2025) 20:4449–4471
+Table 9 Comparative analysis
+with existing ML studiesMethods Accuracy Precision Recall F1-score
+RF 91.26 88.18 90.12 90.53
+PART 99.33 99.1 98.52 98.9
+RF 93.85 94.59 94.1 94.2
+RF 96.67 96.73 97.51 97.12
+RF 99.13 98.43 98.98 98.96
+Proposed model 99.44 99.98 99.21 99.32
+Table 10 Summary of outcomes
+with existing DL-based studiesMethods Accuracy Precision Recall F1-score
+DTOF-ANN 97.8 97.76 97.36% 97.61
+RNN-GRU 99.18 98.39 98.15 98.95
+LSTM-CNN 97.37 86.97 98.07 97.38
+V AE-DNN 97.45 97.89 97.20 97.54
+SI-BBA 94.85 94.15 94.35 94.28DNN 98.81 98.2 98.1 98.1
+Proposed model 99.44 99.98 99.21 99.32
+Fig. 23 Confusion matrix using a secondary dataset
+different hyparameter settings and model trade-offs are uti-
+lized to assess and validate the model. The proposed model
+offers several beneﬁts: it enhances prediction accuracy withlow false positive rates and can be integrated into a web
+browser application for phishing page detection.
+5.2 Practical contributions
+The ﬁndings of this study extend beyond academics, offer-
+ing substantial beneﬁts to users, businesses, and the broadercybersecurity ﬁeld.
+1. Enhanced Cybersecurity Standards : Our ﬁndings
+demonstrate signiﬁcant improvements in accuracy,
+reduced false positives, and lower error rates for webphishing detection with the proposed model. Theseadvancement represents a crucial enhancement in cyber-
+security techniques, especially as phishing attacks growmore in complexity and frequency. Organizations and
+users can trust on the system’s enhanced capabilities to
+detect and prevent phishing attempts, thereby reducingthe probability of successful attacks.
+2. Flexibility to Real-W orld scenarios : The study empha-
+sis on practical relevance ensures that the model is notmerely an academic solution but a feasible tool adapt-able to various dynamic environments. This ﬂexibility is
+essential; the proposed model has been evaluated using
+diverse datasets and assessment criteria and optimized tohandle large datasets in complex environments.
+3. Recommendation for Management : The study provides
+valuable insights for management by demonstrating theproposed model’s effectiveness in identifying phishing
+attacks. This model’s adaptability fosters conﬁdence in
+users and institutions, ensuring the system’s usefulnesseven when faced with advanced deception techniques.
+In summary, the practical implications of this study under-
+score that the proposed model offers considerable beneﬁts to
+users and institutions in improving cybersecurity resilienceand culture. The outcomes offer practical insight to guide
+users in a simpliﬁed way to select, implement, continuously
+monitor, and enhance web phishing detection systems.
+5.3 Study limitations
+This study has several limitations. First, phishing attack typesand motivations change very fast over time. The proposed
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4469
+Fig. 24 Graphical comparison
+with existing DL-based studies
+80.00%85.00%90.00%95.00%100.00%
+DTOF-ANN RNN-GRU LSTM-CNN VAE-DNN SI-BBA DNN EGSO-CNN 
+(Proposed)
+Accuracy (%)Precision Recall f1-scoreParameters (%)
+Methods
+model needs to be tested and validated with more datasets.
+Second, it cannot detect phishing websites that substitute
+textual content with embedded objects like Flash and Javascripts. Separate tools are required to identify these embed-
+ded items in phishing websites. Third, this study did not
+consider the effectiveness of the training, test outcomes, anduser feedback in phishing attacks.
+5.4 Future studies
+There are several future study directions. First, futureresearch should be extended to explore phishing detection
+on IoT devices and mobile platforms using different artiﬁ-
+cial intelligence techniques since attackers are focusing onthese areas. Second, this study presents the summarized liter-
+ature and recent advancements in phishing attacks, which can
+be utilized to develop additional informational materials andadvanced training programs for users to create awareness.
+Third, future studies should emphasize developing a hybrid
+phishing detection model and include the beneﬁts of existingphishing detection methods. Fourth, future research shouldexplore the applications of large language models (LLMs) in
+recognizing phishing attacks using the generated data.
+6 Conclusion
+Phishing is a cyber-attack that targets Internet users through
+social engineering and deception. Despite the availability
+of existing detection methods, phishing attacks continue to
+increase rapidly, causing millions of dollars in user lossesand highlighting the need for more advanced detection tech-
+niques. To address this challenge, a web phishing dataset
+has been systematically created to explore additional unseenfeatures and extend the existing studies. The study proposed
+a deep-leaning-based EGSO-CNN model with optimization
+techniques to enhance the performance with low false posi-tive and error rates in phishing detection. The proposed modelhas been evaluated using three experimentations, yielded
+an accuracy of 99.44%, and is further validated with a
+different dataset. The model demonstrates strong potentialfor real-world applications, and its performance could be
+enhanced by exploring alternative deep learning approaches
+and incorporating transfer learning techniques with optimiza-tion. Ultimately, the proposed model can signiﬁcantly aidorganizations in implementing effective web phishing pre-
+vention strategies, thereby enhancing customer satisfaction
+and their reputation in an increasingly competitive market-place.
+Author contributions KB and SM conceptualize the topic. KB, SM,
+and RM are involved in Methodology, investigation, and validation.SM supervised the whole work. All authors reviewed the manuscript.
+Funding Open access funding provided by Institute for Energy Tech-
+nology.
+Data and Code availability The process data and codes generated during
+and/or analyzed during the current study will be available at reasonablerequest.
+Declarations
+Conﬂict of interest The authors declare no competing interests.
+Open Access This article is licensed under a Creative Commons
+Attribution 4.0 International License, which permits use, sharing, adap-tation, distribution and reproduction in any medium or format, aslong as you give appropriate credit to the original author(s) and thesource, provide a link to the Creative Commons licence, and indi-cate if changes were made. The images or other third party materialin this article are included in the article’s Creative Commons licence,unless indicated otherwise in a credit line to the material. If materialis not included in the article’s Creative Commons licence and yourintended use is not permitted by statutory regulation or exceeds thepermitted use, you will need to obtain permission directly from the copy-right holder. To view a copy of this licence, visit http://creativecomm
+ons.org/licenses/by/4.0/ .
+123
+4470 International Journal of Data Science and Analytics (2025) 20:4449–4471
+References
+1. Maware, C., Parsley, D.M., Huang, K., Swan, G.M., Akafuah,
+N.: Moving lab-based in-person training to online delivery: thecase of a continuing engineering education program. J. Comput.Assist. Learn. 39(4), 1167–1183 (2023). https://doi.org/10.1111/
+jcal.12789
+2. Barik, K., Misra, S., Fernandez-Sanz, L.: A model for estimating
+resiliency of AI-based classiﬁers defending against cyber attacks.Int. J. Comput. Intell. Syst. 17(1), 290 (2024). https://doi.org/10.
+1007/s44196-024-00686-3
+3. James, J.W.: Engineering the Human Mind: Social Engineering
+Attack Using Kali Linux. SN Comput. Sci. 4(6), 846 (2023). https://
+doi.org/10.1007/s42979-023-02321-y
+4. Rahman, A.U., Al-Obeidat, F., Tubaishat, A., Shah, B., Anwar,
+S., Halim, Z.: Discovering the correlation between phishing sus-
+ceptibility causing data biases and big ﬁve personality traits usingC-GAN,” IEEE Trans. Comput. Soc. Syst. (2022)
+5. Chen, L., Peng, J., Liu, Y ., Li, J., Xie, F., Zheng, Z.: Phishing scams
+detection in ethereum transaction network. ACM Trans. InternetTechnol. TOIT 21(1), 1–16 (2020)
+6. Desolda, G., Ferro, L.S., Marrella, A., Catarci, T., Costabile, M.F.:
+Human factors in phishing attacks: a systematic literature review.ACM Comput. Surv. CSUR 54(8), 1–35 (2021)
+7. Barik, K., Misra, S.: IDS-Anta: an open-source code with a defense
+mechanism to detect adversarial attacks for intrusion detection sys-tem. Softw. Impacts 21, 100664 (2024). https://doi.org/10.1016/j.
+simpa.2024.100664
+8. Anti-Phishing Working Group, “Anti-Phishing Working
+Group,Q3,2024.” 2024. [Online]. Available: https://docs.apwg.
+org/reports/apwg_trends_report_q3_2024.pdf
+9. Gupta, B.B., Yadav, K., Razzak, I., Psannis, K., Castiglione, A.,
+Chang, X.: A novel approach for phishing URLs detection usinglexical based machine learning in a real-time environment. Comput.Commun. 175, 47–57 (2021)
+10. Sahingoz, O.K., Buber, E., Kugu, E.: DEPHIDES: deep learn-
+ing based phishing detection system. IEEE Access 12, 8052–8070
+(2024). https://doi.org/10.1109/ACCESS.2024.3352629
+11. Mumuni, A., Mumuni, F.: Automated data processing and feature
+engineering for deep learning and big data applications: a survey.
+J. Inf. Intell. (2024). https://doi.org/10.1016/j.jiixd.2024.01.002
+12. Barik, K., Misra, S., Konar, K., Fernandez-Sanz, L., Koyuncu, M.:
+Cybersecurity deep: approaches, attacks dataset, and comparativestudy. Appl. Artif. Intell. 36(1), 1 (2022). https://doi.org/10.1080/
+08839514.2022.2055399
+13. Skula, I., Kvet, M.: A framework for preparing a balanced and
+comprehensive phishing dataset. IEEE Access 12, 53610–53622
+(2024). https://doi.org/10.1109/ACCESS.2024.3387437
+14. Barik, K., Misra, S., Fernandez-Sanz, L.: Adversarial attack detec-
+tion framework based on optimized weighted conditional stepwiseadversarial network. Int. J. Inf. Secur. 23(3), 2353–2376 (2024).
+https://doi.org/10.1007/s10207-024-00844-w
+15. Naqvi, B., Perova, K., Farooq, A., Makhdoom, I., Oyedeji, S.,
+Porras, J.: Mitigation strategies against the phishing attacks: a sys-tematic literature review. Comput. Secur. 103387, (2023)
+16. Ollmann, G.: The phishing guide understanding and preventing
+phishing attacks. NGS Softw. Insight Secur. Res. (2004)
+17. Sunil, A.N.V ., Sardana, A.: A pagerank based detection technique
+for phishing web sites. In: 2012 IEEE Symposium on Computersand Informatics (ISCI), IEEE, pp. 58–63 (2012)
+18. Tan, C.C.L., Chiew, K.L., Yong, K.S.C., Sebastian, Y ., Than,
+J.C.M., Tiong, W.K.: Hybrid phishing detection using joint visualand textual identity. Expert Syst. Appl. 220, 119723 (2023)19. Iqbal, F., Javed, A.R., Jhaveri, R.H., Almadhor, A., Farooq, U.:
+Transfer learning-based forensic analysis and classiﬁcation of E-mail content. ACM Trans. Asian Low-Resour. Lang. Inf. Process.(2023). https://doi.org/10.1145/3604592
+20. Biswas, B., Mukhopadhyay, A., Kumar, A., Delen, D.: A hybrid
+framework using explainable AI (XAI) in cyber-risk managementfor defence and recovery against phishing attacks. Decis. SupportSyst. 114102 (2023)
+21. Corona, I. et al.: DeltaPhish: detecting phishing webpages in com-
+promised websites. In: Foley, S.N., Gollmann, D., Snekkenes, E.(eds.) Computer Security – ESORICS 2017, in Lecture Notesin Computer Science, vol. 10492, pp. 370–388, Springer Inter-national Publishing, Cham, (2017) https://doi.org/10.1007/978-3-
+319-66402-6_22 .
+22. Orunsolu, A.A., Sodiya, A.S., Akinwale, A.T.: A predictive model
+for phishing detection. J. King. Saud-Univ. Comput. Inf. Sci. 34(2),
+232–247 (2022)
+23. Boyapati, M., Aygun, R.: Phishing Web Page Detection using Web
+Scraping. In: SoutheastCon 2023, IEEE, pp. 167–174 (2023)
+24. Bacanin, N., et al.: Addressing feature selection and extreme learn-
+ing machine tuning by diversity-oriented social network search: anapplication for phishing websites detection. Complex Intell. Syst.
+9(6), 7269–7304 (2023)
+25. Uddin, M.M., Islam, K.A., Mamun, M., Tiwari, V .K., Park, J.: A
+comparative analysis of machine learning-based website phishingdetection using URL information. In: 2022 5th International Con-ference on Pattern Recognition and Artiﬁcial Intelligence (PRAI),IEEE, pp. 220–224 (2022)
+26. Marchal, S., Francois, J., State, R., Engel, T.: PhishStorm: detect-
+ing phishing with streaming analytics. IEEE Trans. Netw. Serv.Manag. 11(4), 458–471 (2014). https://doi.org/10.1109/TNSM.
+2014.2377295
+27. Ahammad, S.K.H., et al.: Phishing URL detection using machine
+learning methods. Adv. Eng. Softw. 173, 103288 (2022)
+28. Alani, M.M., Tawﬁk, H.: PhishNot: a cloud-based machine-
+learning approach to phishing URL detection. Comput. Netw. 218,
+109407 (2022)
+29. Korkmaz, M., Sahingoz, O.K., Diri, B.: Detection of phishing web-
+sites by using machine learning-based URL analysis. In 2020 11thInternational Conference on Computing, Communication and Net-working Technologies (ICCCNT), IEEE, pp. 1–7 (2020)
+30. Barraclough, P.A., Fehringer, G., Woodward, J.: Intelligent cyber-
+phishing detection for online. Comput. Secur. 104, 102123 (2021)
+31. Jain, A.K., Debnath, N., Jain, A.K.: APuML: an efﬁcient approach
+to detect mobile phishing webpages using machine learning. Wirel.Pers. Commun. 125(4), 3227–3248 (2022)
+32. Sanchez-Paniagua, M., Fernandez, E.F., Alegre, E., Al-Nabki, W.,
+Gonzalez-Castro, V .: Phishing URL detection: a real-case sce-
+nario through login URLs. IEEE Access 10, 42949–42960 (2022).
+https://doi.org/10.1109/ACCESS.2022.3168681
+33. Jha, A.K., Muthalagu, R., Pawar, P.M.: Intelligent phishing website
+detection using machine learning. Multimed. Tools Appl. 82(19),
+29431 (2023)
+34. Karim, A., Shahroz, M., Mustofa, K., Belhaouari, S.B., Joga,
+S.R.K.: Phishing detection system through hybrid machine learn-ing based on URL. IEEE Access 11, 36805–36822 (2023)
+35. Shirazi, H., Muramudalige, S.R., Ray, I., Jayasumana, A.P., Wang,
+H.: Adversarial autoencoder data synthesis for enhancing machinelearning-based phishing detection algorithms. IEEE Trans. Serv.Comput. 16(4), 2411–2422 (2023)
+36. Pandey, P., Mishra, N.: Phish-Sight: a new approach for phishing
+detection using dominant colors on web pages and machine learn-ing. Int. J. Inf. Secur. 22(4), 881–891 (2023)
+37. Smadi, S., Aslam, N., Zhang, L.: Detection of online phishing email
+using dynamic evolving neural network based on reinforcementlearning. Decis. Support. Syst. 107, 88–102 (2018)
+123
+International Journal of Data Science and Analytics (2025) 20:4449–4471 4471
+38. Yang, P., Zhao, G., Zeng, P.: Phishing website detection based on
+multidimensional features driven by deep learning. IEEE Access7, 15196–15209 (2019)
+39. Zhu, E., Ju, Y ., Chen, Z., Liu, F., Fang, X.: DTOF-ANN: an artiﬁcial
+neural network phishing detection model based on decision tree andoptimal features. Appl. Soft Comput. 95, 106505 (2020)
+40. Tang, L., Mahmoud, Q.H.: A deep learning-based framework for
+phishing website detection. IEEE Access 10, 1509–1521 (2021)
+41. Al-Ahmadi, S., Alotaibi, A., Alsaleh, O.: PDGAN: Phishing
+detection with generative adversarial networks. IEEE Access 10,
+42459–42468 (2022)
+42. Almousa, M., Zhang, T., Sarrafzadeh, A., Anwar, M.: Phishing
+website detection: How effective are deep learning-based modelsand hyperparameter optimization? Secur. Priv. 5(6), e256 (2022)
+43. Hussain, M., Cheng, C., Xu, R., Afzal, M.: CNN-Fusion: An
+effective and lightweight phishing detection method based onmulti-variant ConvNet. Inf. Sci. 631, 328–345 (2023)
+44. Prabakaran, M.K., Meenakshi Sundaram, P., Chandrasekar, A.D.:
+An enhanced deep learning-based phishing detection mechanismto effectively identify malicious URLs using variational autoen-coders. IET Inf. Secur. 17(3), 423–440 (2023)
+45. Kumar, P.P., Jaya, T., Rajendran, V .: SI-BBA–A novel phishing
+website detection based on Swarm intelligence with deep learning.
+Mater. Today Proc. 80, 3129–3139 (2023)
+46. Opara, C., Chen, Y ., Wei, B.: Look before You leap: Detecting
+phishing web pages by exploiting raw URL And HTML character-istics. Expert Syst. Appl. 236, 121183 (2024)
+47. Sarker, O., Jayatilaka, A., Haggag, S., Liu, C., Babar, M.A.: A
+Multi-vocal Literature Review on challenges and critical suc-cess factors of phishing education, training and awareness. J.Syst. Softw. 208, 111899 (2024). https://doi.org/10.1016/j.jss.
+2023.11189948. Sonowal, G.: Phishing and Communication Channels: A Guide
+to Identifying and Mitigating Phishing Attacks. Apress, Berkeley(2022). https://doi.org/10.1007/978-1-4842-7744-7
+49. Tabassum, H., Ghosh, G., Atika, A., Chakrabarty, A.: Detect-
+ing online recruitment fraud using machine learning. In 20219th International Conference on Information and CommunicationTechnology (ICoICT), IEEE, pp. 472–477 (2021)
+50. Vidyasri, P., Suresh, S.: FDN-SA: fuzzy deep neural-stacked
+autoencoder-based phishing attack detection in social engineer-ing. Comput. Secur. 148, 104188 (2025). https://doi.org/10.1016/
+j.cose.2024.104188
+51. Xi, P., Cheng, D., Lu, G., Deng, Z., Zhang, G., Zhang, S.: Identify-
+ing local useful information for attribute graph anomaly detection.Neurocomputing 617, 128900 (2025). https://doi.org/10.1016/j.
+neucom.2024.128900
+52. He, D., Lv, X., Zhu, S., Chan, S., Choo, K.-K.R.: A Method for
+Detecting Phishing Websites Based on Tiny-Bert Stacking. IEEEInternet Things J. 11(2), 2236–2243 (2024). https://doi.org/10.
+1109/JIOT.2023.3292171
+53. Booth, T.M., Ghosh, S.: A gradient descent multi-algorithm grid
+search optimization of deep learning for sensor fusion. In 2023IEEE International Systems Conference (SysCon), IEEE, pp. 1–8
+(2023)
+Publisher’s Note Springer Nature remains neutral with regard to juris-
+dictional claims in published maps and institutional afﬁliations.
+123

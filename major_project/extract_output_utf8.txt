@@ -1,0 +1,162 @@
+﻿Defaulting to user installation because normal site-packages is not writeable
+Collecting PyPDF2
+  Downloading pypdf2-3.0.1-py3-none-any.whl.metadata (6.8 kB)
+Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+Installing collected packages: PyPDF2
+Successfully installed PyPDF2-3.0.1
+=== demo_1.pptx ===
+   Smart Phishing URL Detection System
+VISVESVARAYA TECHNOLOGICAL UNIVERSITY, BELAGAVI
+B.L.D.E.AÆs V.P.DR.P.G.HALAKATTI COLLEGE OF ENGINEERING AND TECHNOLOGY,VIJAYAPUR-586103
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING 
+Guide
+Mrs. Anupama Inamdar
+Co-ordinator
+S.R.Patil
+Dakshayani. I
+PROJECT PHASE-Iá
+Overview
+Smart Phishing URL Detection System :- is a machine learningûbased solution designed to identify and block malicious URLs in real-time. It analyz URL patterns, domain features, and suspicious behaviors to protect users from phishing attacks and data breaches.
+
+Applications
+Browser Security û Real-time protection while browsing 
+Email Filtering û Detects phishing links in emails 
+Banking Security û Secures financial transactions 
+E-Commerce Platforms û Prevents fraudulent activities 
+Enterprise Systems û Protects organizational networks 
+
+Key Technologies
+Machine Learning (ML) û Classifies URLs as safe or malicious 
+Artificial Intelligence (AI) û Improves detection over time 
+URL Feature Extraction û Analyzes structure & patterns 
+Cybersecurity Techniques û Ensures safe user interaction 
+Web Technologies û Enables browser & system integration
+Literature Survey (URL Phishing Detection)
+Literature Survey (URL Phishing Detection)
+Problem Statements
+Existing phishing detection systems face significant challenges that limit their effectiveness:
+
+Blacklist Dependency
+Reliance on pre-existing lists limits detection of new, unknown threats
+
+No Real-Time Detection
+Delayed response times allow malicious links to compromise systems before detection
+
+Low Accuracy
+High false positive and false negative rates reduce user trust
+
+No Adaptive Learning
+Static systems cannot learn from new phishing techniques
+
+Poor User Awareness
+Limited feedback fails to educate users about potential threats
+Objectives
+
+
+
+
+Detect phishing URLs with high accuracy
+ 
+Provide real-time analysis 
+
+Reduce false positives/negatives 
+
+Improve user awareness
+ 
+Handle new unknown threats 
+Drawbacks of Existing Research
+
+
+Limited Scope
+Most systems focus only on URL analysis without considering contextual factors
+
+
+High Computational Cost
+Resource-intensive methods slow down browsing experience
+
+
+Static Models
+Fixed algorithms cannot adapt to evolving phishing techniques
+
+
+False Positives
+Legitimate sites incorrectly flagged as malicious frustrate users
+
+
+
+Scalability Issues
+Systems struggle to handle large volumes of URLs efficiently
+Proposed Solutions
+
+Core Functional Components
+
+Intelligent Feature Extraction: Automatically analyzes URL structures, domain information, and suspicious patterns to identify red flags.
+ML-Based Classification: Uses trained algorithms to differentiate between legitimate and fraudulent websites based on extracted features.
+Real-Time Detection Engine: Provides immediate feedback to the user, blocking malicious links before they can compromise sensitive data.
+
+Key Technical Advantages
+
+High Accuracy: Engineered to reduce both false positives (legitimate sites incorrectly flagged) and false negatives (undetected threats) through intelligent analysis.
+Adaptive Security: Unlike static systems, the AI-driven model improves its detection capabilities over time as it encounters new phishing techniques.
+Scalable Architecture: Designed to handle large volumes of URLs efficiently without significant computational costs or browsing delays.
+
+Proposed Workflow
+
+Input: User enters or encounters a URL.
+Analysis: The system performs real-time feature extraction and processes it through the ML model.
+Output: Provides a security prediction and takes defensive action if a threat is detected.
+Error reading d:\major_project\demo_1.pptx: 'charmap' codec can't encode character '\U0001f539' in position 16: character maps to <undefined>
+=== demo_2.pptx ===
+   Smart Phishing URL Detection System
+VISVESVARAYA TECHNOLOGICAL UNIVERSITY, BELAGAVI
+B.L.D.E.AÆs V.P.DR.P.G.HALAKATTI COLLEGE OF ENGINEERING AND TECHNOLOGY,VIJAYAPUR-586103
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING 
+Guide
+Mrs. Anupama Inamdar
+PROJECT PHASE-IIá
+Co-ordinator
+S.R.Patil
+Dakshayani. I
+
+Phishing URL Detection System
+Hybrid Deep Learning & Machine Learning Approach
+A web-based application combining CNN-BiLSTM neural networks with ensemble methods for automated phishing detection
+Project Overview
+
+Objective
+Detect phishing URLs using hybrid ML/DL architecture with real-time prediction capabilities
+
+Problem
+Growing threat of phishing attacks requires automated, scalable detection systems
+
+Solution
+Web application with dual models: CNN-BiLSTM for pattern recognition and RF/DT for fast inference
+
+Stack
+Flask backend, TensorFlow/Keras, Scikit-learn, HTML/CSS/JS frontend
+
+Dataset & Preprocessing
+Data Sources
+OpenPhish feed (2500+ real phishing URLs)
+Synthetic legitimate domains (2500 URLs)
+Stratified train/validation/test split
+Cleaning Pipeline
+URL normalization and deduplication
+Format validation
+Character-level tokenization
+Feature Engineering
+Character embeddings (VOCAB_SIZE: 256)
+Statistical features (max length: 2048 chars)
+URL structure analysis
+Preprocessing
+Vectorization and scaling
+StandardScaler for DT/RF models
+
+Model Architecture
+
+
+1
+CNN-BiLSTM
+Error reading d:\major_project\demo_2.pptx: 'charmap' codec can't encode character '\u2192' in position 20: character maps to <undefined>
+=== Reach_paper.pdf ===
+Error reading d:\major_project\Reach_paper.pdf: 'charmap' codec can't encode character '\ufb01' in position 1551: character maps to <undefined>
